@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #151515;
+    color: #fff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#head {
+    margin-top: 2vh;
+    height: 30vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+#head>#top {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
+#head>#middle {
+    width: 100%;
+    height: 50%;
+    font-size: 6em;
+    font-weight: 600;
+}
+
+#head>#bottom {
+    width: 100%;
+    height: 20%;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+}
+
+#top>img {
+    height: 90%;
+    width: auto;
+    position: absolute;
+    left: 5%;
+}
+
+#top>#get-passes {
+    background: #2461b4;
+    width: 10%;
+    height: 50%;
+    border-radius: 2vh;
+    position: absolute;
+    right: 5%;
+    font-weight: 600;
+    transition: all 300ms linear;
+}
+
+#slider {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    height: 60vh;
+    position: relative;
+}
+
+.active{
+    display: flex !important;
+    left: 0vw !important;
+}
+
+.next{
+    display: flex !important;
+    left: 100vw !important;
+}
+
+.prev{
+    display: flex !important;
+    left: -100vw !important;
+}
+
+#slider>.slider-cont {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -150vw;
+    z-index: 0;
+    transition: all 300ms linear;
+}
+
+/* #dua_suri:nth-child(0){
+    background: #F2CD00;
+}
+
+#dua_suri:nth-child(1){
+    background: #2461b4;
+} 
+
+#dua_suri:nth-child(2){
+    background: #221854;
+}  */
+
+.slider-cont>.artist-cont {
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    left: 5%;
+    overflow-y: hidden;
+}
+
+.slider-cont>.name-cont {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 5%;
+    overflow-y: hidden;
+}
+
+#dua_suri .artist-cont>img {
+    width: auto;
+    height: 95%;
+    bottom: -5%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 48%;  
+}
+
+#dua_suri .name-cont>img {
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#slider > img {
+    position: absolute;
+    width: 38px;
+    height: auto;
+    top: 50%;
+    transform: translate(0%,-50%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+img[alt="left"]{
+    right: 2% !important;
+}
+
+img[alt="right"]{
+    left: 2% !important;
+}
+
+
+
+@media screen and (max-width : 700px),(orientation : portrait){
+    #head{
+        height: 25vh;
+    }
+
+    #head > #middle{
+        font-size: 22vw;
+    }
+
+    #head > #bottom{
+        font-size: 7vw;
+    }
+
+    #top > #get-passes{
+        width: 35%;
+    }
+
+    .slider-cont > .name-cont {
+        width: 90%;
+        height: 25%;
+        position: absolute;
+        overflow-y: hidden;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);        
+    }
+
+    .slider-cont > .artist-cont {
+        width: 80%;
+        height: 75%;
+        position: absolute;
+        overflow-y: hidden;
+        bottom: 0; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .artist-cont > img {
+        width: auto !important;
+        height: calc(0.87 * 60vh) !important;
+        bottom: -17% !important;
+    }
+
+    #slider > img{
+        width: 5vw;
+    }
+}
