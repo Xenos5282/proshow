@@ -450,7 +450,7 @@ img[alt="right"] {
 
     .artist-cont>img {
         width: auto !important;
-        height: calc(0.87 * 60vh) !important;
+        height: calc(0.80 * 60vh) !important;
         bottom: -17% !important;
     }
 
