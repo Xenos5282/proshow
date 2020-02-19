@@ -1,4 +1,118 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400&display=swap');
+
+/* scroll indicator, directly taken from codepen */
+.scroll-indicator::before,
+.scroll-indicator::after {
+    box-sizing: border-box;
+}
+
+.scroll-indicator {
+    width: 12px;
+    margin: 0 auto;
+    position: absolute;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 50%;
+    top: 93%;
+    transform: translate(-50%, 0%);
+    bottom: -4vh;
+    cursor: pointer;
+}
+
+.scroll-indicator::before,
+.scroll-indicator::after {
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scroll-indicator::before {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    animation: dot 3s infinite ease-in-out;
+}
+
+.scroll-indicator::after {
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: rotate(45deg);
+    animation: arrow 3s infinite ease-in-out;
+    animation-delay: 0.75s;
+    opacity: 0.25;
+}
+
+.scroll-indicator>div {
+    display: block;
+}
+
+.scroll-indicator>div::before,
+.scroll-indicator>div::after {
+    content: '';
+    display: block;
+    margin: 5px auto;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    animation: dot 3s infinite ease-in-out;
+}
+
+.scroll-indicator>div::before {
+    width: 8px;
+    height: 8px;
+    animation-delay: 0.25s;
+    box-sizing: border-box;
+}
+
+.scroll-indicator>div::after {
+    width: 6px;
+    height: 6px;
+    animation-delay: 0.5s;
+    box-sizing: border-box;
+}
+
+@keyframes dot {
+    0% {
+        transform: scale(0.75);
+        opacity: 0.25;
+    }
+
+    25% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.75);
+        opacity: 0.25;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: scale(0.75) rotate(45deg);
+        opacity: 0.25;
+    }
+
+    25% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.75) rotate(45deg);
+        opacity: 0.25;
+    }
+}
+
+/* --------------------------------------------- */
+
 
 html,
 body {
@@ -15,6 +129,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    height: auto;
 }
 
 div {
@@ -23,7 +138,7 @@ div {
     align-items: center;
 }
 
-#head {
+body>#head {
     margin-top: 2vh;
     height: 30vh;
     width: 100%;
@@ -75,17 +190,17 @@ div {
     position: relative;
 }
 
-.active{
+.active {
     display: flex !important;
     left: 0vw !important;
 }
 
-.next{
+.next {
     display: flex !important;
     left: 100vw !important;
 }
 
-.prev{
+.prev {
     display: flex !important;
     left: -100vw !important;
 }
@@ -100,18 +215,6 @@ div {
     z-index: 0;
     transition: all 300ms linear;
 }
-
-/* #dua_suri:nth-child(0){
-    background: #F2CD00;
-}
-
-#dua_suri:nth-child(1){
-    background: #2461b4;
-} 
-
-#dua_suri:nth-child(2){
-    background: #221854;
-}  */
 
 .slider-cont>.artist-cont {
     width: 35%;
@@ -135,7 +238,7 @@ div {
     bottom: -5%;
     transform: translate(-50%, 0%);
     position: absolute;
-    left: 48%;  
+    left: 48%;
 }
 
 #dua_suri .name-cont>img {
@@ -147,70 +250,211 @@ div {
     position: absolute;
 }
 
-#slider > img {
+#slider>img {
     position: absolute;
     width: 38px;
     height: auto;
     top: 50%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
     z-index: 5;
     cursor: pointer;
 }
 
-img[alt="left"]{
+img[alt="left"] {
     right: 2% !important;
 }
 
-img[alt="right"]{
+img[alt="right"] {
     left: 2% !important;
 }
 
+#lineup-cont {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
 
+#lineup-cont>#head {
+    width: 100%;
+    letter-spacing: 0.3em;
+    font-size: 2em;
+    height: 10vh;
+}
 
-@media screen and (max-width : 700px),(orientation : portrait){
-    #head{
+.lineup-child-cont{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.lineup-child-cont:nth-child(2n+0){
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.lineup-child-cont:nth-child(2n+1){
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.lineup-child-cont>.fixed{
+    height: 100%;
+    width: 40vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.fixed > svg{
+    height: 101%;
+    width: 101%;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+#svg-top{
+    top: 0;
+    z-index: 5;
+}
+
+#svg-bottom{
+    bottom: -1px;
+    z-index: 15;
+}
+
+.inView img{
+    top: 0 !important;
+}
+
+.fixed > img{
+    position: absolute;
+    z-index: 10;
+    width: auto;
+    height: 100%;
+    top: 86%;
+    left: 48%;
+    transform: translate(-50%);
+    transition: all ease-in-out 300ms;
+}
+
+.lineup-child-cont > .slide-in{
+    width: calc(100% - 50vh);
+    height: 100%;
+    background: #5c5c5c;
+    position: relative;
+    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.5);
+}
+
+.slide-in > .slide{
+    width: 91%;
+    height: 100%;
+    background: #151515;
+    flex-direction: column;
+    padding: 0 5%;
+    position: absolute;
+    transition: all ease-in-out 300ms;
+    box-shadow: 5px 5px 10px 3px rgba(0,0,0,0.5);
+    z-index: 25;
+}
+
+.lineup-child-cont:nth-child(2n+0) .slide{
+    right: -150%;
+}
+
+.lineup-child-cont:nth-child(2n+1) .slide{
+    left: -150%;
+}
+
+.inView.lineup-child-cont:nth-child(2n+0) .slide{
+    right: 0;
+}
+
+.inView.lineup-child-cont:nth-child(2n+1) .slide{
+    left: 0;
+}
+
+.lineup-child-cont:nth-child(2n+0) .slide > div{
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.lineup-child-cont:nth-child(2n+1) .slide > div{
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.lineup-child-cont:nth-child(2n+1) .slide > .desc{
+    text-align: right;
+}
+
+.main-title{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info{
+    margin-top: 5px;
+}
+
+.desc{
+    display: block;
+    letter-spacing: 0.025em;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+@media screen and (max-width : 700px),
+(orientation : portrait) {
+    body>#head {
         height: 25vh;
     }
 
-    #head > #middle{
+    #head>#middle {
         font-size: 22vw;
     }
 
-    #head > #bottom{
+    #head>#bottom {
         font-size: 7vw;
     }
 
-    #top > #get-passes{
+    #top>#get-passes {
         width: 35%;
     }
 
-    .slider-cont > .name-cont {
+    .slider-cont>.name-cont {
         width: 90%;
         height: 25%;
         position: absolute;
         overflow-y: hidden;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);        
+        transform: translateX(-50%);
     }
 
-    .slider-cont > .artist-cont {
+    .slider-cont>.artist-cont {
         width: 80%;
         height: 75%;
         position: absolute;
         overflow-y: hidden;
-        bottom: 0; 
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .artist-cont > img {
+    .artist-cont>img {
         width: auto !important;
         height: calc(0.87 * 60vh) !important;
         bottom: -17% !important;
     }
 
-    #slider > img{
+    #slider>img {
         width: 5vw;
     }
 }

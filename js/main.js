@@ -1,4 +1,5 @@
 var slider_array;
+var lineup_array;
 var active;
 var next;
 var prev;
@@ -71,5 +72,24 @@ window.addEventListener('DOMContentLoaded',function(){
     document.querySelector('img[alt="left"]').addEventListener('click',CallNext);
     document.querySelector('img[alt="right"]').addEventListener('click',CallPrev);
 
-    
+    lineup_array=document.querySelectorAll('.lineup-child-cont');
+})
+
+
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    // Partially visible elements return true:
+    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    return isVisible;
+}
+
+window.addEventListener('scroll',function(){
+    for(var elem of lineup_array){
+        if(isScrolledIntoView(elem)) elem.classList.add('inView');
+    }
 })
