@@ -341,6 +341,64 @@ body>#head {
     position: absolute;
 }
 
+#pk .artist-cont>img {
+    width: auto;
+    height: 110%;
+    bottom: -10%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    max-width: 100%;
+}
+
+#pk > .name-cont{
+    width: 40%;
+    right: 8%;
+}
+
+#pk > .artist-cont{
+    width: 40%;
+    left: 5%;
+}
+
+#pk .name-cont > img {
+    width: 70%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#terimiko .artist-cont>img {
+    width: auto;
+    height: 110%;
+    bottom: -10%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    max-width: 100%;
+}
+
+#terimiko > .name-cont{
+    width: 35%;
+    right: 5%;
+}
+
+#terimiko > .artist-cont{
+    width: 40%;
+    left: 5%;
+}
+
+#terimiko .name-cont > img {
+    width: 70%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
 
 #slider>img {
     position: absolute;
@@ -513,11 +571,27 @@ img[alt="right"] {
     left: 50%;
 }
 
-#hundia-main.inView  img{
+#hundia-main .inView  img{
     top: -5% !important;
 }
 
-#zaeden-main.inView  img{
+#zaeden-main .inView  img{
+    top: -10% !important;
+}
+
+#pk-main .inView  img{
+    top: -5% !important;
+}
+
+#pk-main  img{
+    left: 50%;
+}
+
+#terimiko-main  img{
+    left: 50%;
+}
+
+#terimiko-main .inView  img{
     top: -10% !important;
 }
 
