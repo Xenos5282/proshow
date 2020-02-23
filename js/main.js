@@ -97,3 +97,7 @@ document.querySelector('.scroll-indicator').addEventListener('click', function (
     let pageHeight = window.innerHeight;
     window.scrollBy(0, pageHeight);
 })
+
+function redirectProshow(){
+    window.open('https://register.mitrevels.in/?buycardredr=58','_blank');
+}

@@ -185,6 +185,7 @@ body>#head {
     right: 5%;
     font-weight: 600;
     transition: all 300ms linear;
+    cursor: pointer;
 }
 
 #slider {
