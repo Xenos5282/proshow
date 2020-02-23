@@ -327,8 +327,8 @@ body>#head {
     left: 7%;
 }
 
-#hundia .name-cont>img {
-    width: 80%;
+#zaeden .name-cont > img {
+    width: 98%;
     height: auto;
     top: 50%;
     left: 50%;
@@ -539,32 +539,77 @@ img[alt="right"] {
     }
 
     .slider-cont>.name-cont {
-        width: 90%;
-        height: 25%;
-        position: absolute;
-        overflow-y: hidden;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 90% !
+        ;
+        height: 25% !important;
+        position: absolute !important;
+        overflow-y: hidden !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
     .slider-cont>.artist-cont {
-        width: 80%;
-        height: 75%;
-        position: absolute;
-        overflow-y: hidden;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 80% !important;
+        height: 75% !important;
+        position: absolute !important;
+        overflow-y: hidden !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
     .artist-cont>img {
         width: auto !important;
         height: calc(0.87 * 60vh) !important;
         bottom: -17% !important;
+        max-width: 100% !important;
     }
 
     #slider>img {
-        width: 5vw;
+        width: 5vw !important;
+    }
+
+    #lineup-cont{
+        /* display: none; */
+    }
+
+    .lineup-child-cont{
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    .lineup-child-cont .fixed{
+        height: 30vh !important;
+        width: 30vh !important;
+    }
+
+    .lineup-child-cont .slide-in{
+        height: 60vh;
+        width: 90%;
+    }
+
+    .main-title{
+        font-size: 1.5em !important;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .desc{
+        font-size: 1em !important;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .info{
+        font-size: 1em !important;
+        margin-top: 5% !important;
+        /* text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important; */
     }
 }
