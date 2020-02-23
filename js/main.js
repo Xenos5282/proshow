@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', function () {
     document.querySelector('img[alt="left"]').addEventListener('click', CallNext);
     document.querySelector('img[alt="right"]').addEventListener('click', CallPrev);
 
-    lineup_array = document.querySelectorAll('.lineup-child-cont');
+    lineup_array = document.querySelectorAll('.lineup-child-cont  .fixed');
 })
 
 function isScrolledIntoView(el) {
