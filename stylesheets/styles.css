@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400&display=swap');
 
+*{
+    scroll-behavior: smooth;
+}
+
 /* scroll indicator, directly taken from codepen */
 .scroll-indicator::before,
 .scroll-indicator::after {

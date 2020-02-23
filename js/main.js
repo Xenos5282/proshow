@@ -9,12 +9,12 @@ var btn;
 
 var timer;
 
-function resetTimer(){
+function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(CallNext,5000);
+    timer = setInterval(CallNext, 5000);
 }
 
-function CallNext(){
+function CallNext() {
     index++;
 
     active.style.left = "-100vw";
@@ -23,22 +23,22 @@ function CallNext(){
 
     next.classList.add('active');
     active.classList.add('prev');
-    slider_array[(index+1)%limit].classList.add('next');
-    
+    slider_array[(index + 1) % limit].classList.add('next');
+
     active.classList.remove('active');
     prev.classList.remove('prev');
     next.classList.remove('next');
 
     prev = active;
     active = next;
-    next = slider_array[(index+1)%limit];   
-    // resetTimer();
+    next = slider_array[(index + 1) % limit];
+    resetTimer();
 }
 
-function CallPrev(){
+function CallPrev() {
     index--;
-    if(index<0){
-        index+=limit;
+    if (index < 0) {
+        index += limit;
     }
 
     active.style.left = "100vw";
@@ -47,19 +47,19 @@ function CallPrev(){
 
     prev.classList.add('active');
     active.classList.add('next');
-    slider_array[(index-1+limit)%limit].classList.add('prev');
-    
+    slider_array[(index - 1 + limit) % limit].classList.add('prev');
+
     active.classList.remove('active');
     prev.classList.remove('prev');
     next.classList.remove('next');
 
     next = active;
     active = prev;
-    prev = slider_array[(index-1+limit)%limit];  
-    // resetTimer();
+    prev = slider_array[(index - 1 + limit) % limit];
+    resetTimer();
 }
 
-window.addEventListener('DOMContentLoaded',function(){
+window.addEventListener('DOMContentLoaded', function () {
     slider_array = document.querySelectorAll('.slider-cont');
     limit = slider_array.length;
     btn = document.querySelector('#get-passes');
@@ -67,24 +67,13 @@ window.addEventListener('DOMContentLoaded',function(){
     prev = document.querySelector('.prev');
     next = document.querySelector('.next');
 
-    // timer = setInterval(CallNext,5000);
+    timer = setInterval(CallNext,5000);
 
-    document.querySelector('img[alt="left"]').addEventListener('click',CallNext);
-    document.querySelector('img[alt="right"]').addEventListener('click',CallPrev);
+    document.querySelector('img[alt="left"]').addEventListener('click', CallNext);
+    document.querySelector('img[alt="right"]').addEventListener('click', CallPrev);
 
-    lineup_array=document.querySelectorAll('.lineup-child-cont');
+    lineup_array = document.querySelectorAll('.lineup-child-cont');
 })
-
-
-function vh(v) {
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    return (v * h) / 100;
-  }
-  
-  function vw(v) {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    return (v * w) / 100;
-  }
 
 function isScrolledIntoView(el) {
     var rect = el.getBoundingClientRect();
@@ -98,8 +87,13 @@ function isScrolledIntoView(el) {
     return isVisible;
 }
 
-window.addEventListener('scroll',function(){
-    for(var elem of lineup_array){
-        if(isScrolledIntoView(elem)) elem.classList.add('inView');
+window.addEventListener('scroll', function () {
+    for (var elem of lineup_array) {
+        if (isScrolledIntoView(elem)) elem.classList.add('inView');
     }
+})
+
+document.querySelector('.scroll-indicator').addEventListener('click', function () {
+    let pageHeight = window.innerHeight;
+    window.scrollBy(0, pageHeight);
 })
