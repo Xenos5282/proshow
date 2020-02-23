@@ -250,9 +250,96 @@ body>#head {
     position: absolute;
 }
 
+#yellow-diary .artist-cont>img {
+    width: calc(80% - (70 * (100vw - 100vh) / 727));
+    height: auto;
+    bottom: calc(100 * (-1 * (100vw - 100vh) / 727));
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    max-height: 120%;
+}
+
+#yellow-diary > .name-cont{
+    width: 40%;
+}
+
+#yellow-diary > .artist-cont{
+    width: 47%;
+    left: 5%;
+}
+
+#yellow-diary .name-cont>img {
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#hundia .artist-cont>img {
+    width: auto;
+    height: 120%;
+    bottom: -20%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    max-height: 120%;
+}
+
+#hundia > .name-cont{
+    width: 40%;
+    right: 10%;
+}
+
+#hundia > .artist-cont{
+    width: 35%;
+    left: 10%;
+}
+
+#hundia .name-cont>img {
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#zaeden .artist-cont>img {
+    width: calc(100% - (70 * (100vw - 100vh) / 727));
+    height: auto;
+    bottom: calc(10 * (-1 * (100vw - 100vh) / 727));
+    transform: translate(-50%, 0%);
+    position: absolute;
+    left: 50%;
+    max-height: 110%;
+}
+
+#zaeden > .name-cont{
+    width: 40%;
+    right: 10%;
+}
+
+#zaeden > .artist-cont{
+    width: 35%;
+    left: 7%;
+}
+
+#hundia .name-cont>img {
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+
 #slider>img {
     position: absolute;
-    width: 38px;
+    width: 3%;
     height: auto;
     top: 50%;
     transform: translate(0%, -50%);
@@ -361,22 +448,22 @@ img[alt="right"] {
     box-shadow: 5px 5px 10px 3px rgba(0,0,0,0.5);
     z-index: 25;
 }
-
+/* 
 .lineup-child-cont:nth-child(2n+0) .slide{
     right: -150%;
 }
 
 .lineup-child-cont:nth-child(2n+1) .slide{
     left: -150%;
-}
+} */
 
-.inView.lineup-child-cont:nth-child(2n+0) .slide{
+/* .inView.lineup-child-cont:nth-child(2n+0) .slide{
     right: 0;
 }
 
 .inView.lineup-child-cont:nth-child(2n+1) .slide{
     left: 0;
-}
+} */
 
 .lineup-child-cont:nth-child(2n+0) .slide > div{
     justify-content: flex-start;
@@ -397,17 +484,40 @@ img[alt="right"] {
 .main-title{
     font-weight: 600;
     margin-bottom: 5px;
+    font-size: 2em;
 }
 
 .info{
     margin-top: 5px;
+    font-size: 1.1em;
 }
 
 .desc{
     display: block;
     letter-spacing: 0.025em;
     font-weight: 300;
-    font-size: 1em;
+    font-size: 1.1em;
+}
+
+#yd-main  img{
+    width: 80%;
+    left: 50%;
+}
+
+#hundia-main  img{
+    left: 50%;
+}
+
+#hundia-main.inView  img{
+    top: -5% !important;
+}
+
+#zaeden-main.inView  img{
+    top: -10% !important;
+}
+
+#zaeden-main  img{
+    left: 50%;
 }
 
 @media screen and (max-width : 700px),
@@ -450,7 +560,7 @@ img[alt="right"] {
 
     .artist-cont>img {
         width: auto !important;
-        height: calc(0.80 * 60vh) !important;
+        height: calc(0.87 * 60vh) !important;
         bottom: -17% !important;
     }
 

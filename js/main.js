@@ -32,7 +32,7 @@ function CallNext(){
     prev = active;
     active = next;
     next = slider_array[(index+1)%limit];   
-    resetTimer();
+    // resetTimer();
 }
 
 function CallPrev(){
@@ -56,7 +56,7 @@ function CallPrev(){
     next = active;
     active = prev;
     prev = slider_array[(index-1+limit)%limit];  
-    resetTimer();
+    // resetTimer();
 }
 
 window.addEventListener('DOMContentLoaded',function(){
@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded',function(){
     prev = document.querySelector('.prev');
     next = document.querySelector('.next');
 
-    timer = setInterval(CallNext,5000);
+    // timer = setInterval(CallNext,5000);
 
     document.querySelector('img[alt="left"]').addEventListener('click',CallNext);
     document.querySelector('img[alt="right"]').addEventListener('click',CallPrev);
@@ -75,6 +75,16 @@ window.addEventListener('DOMContentLoaded',function(){
     lineup_array=document.querySelectorAll('.lineup-child-cont');
 })
 
+
+function vh(v) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (v * h) / 100;
+  }
+  
+  function vw(v) {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return (v * w) / 100;
+  }
 
 function isScrolledIntoView(el) {
     var rect = el.getBoundingClientRect();
